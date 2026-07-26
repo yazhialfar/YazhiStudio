@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -14,9 +14,10 @@
 <style>
 
 :root{
---cream:#f2ede3;
---ink:#171513;
+--paper:#ebe5d8;
+--ink:#181614;
 --red:#b3372c;
+--line:#cfc6b7;
 }
 
 
@@ -28,11 +29,9 @@ box-sizing:border-box;
 
 
 body{
-
-background:var(--ink);
-color:var(--cream);
-font-family:"Courier New",monospace;
-
+background:var(--paper);
+color:var(--ink);
+font-family:"Cormorant Garamond",serif;
 }
 
 
@@ -75,10 +74,11 @@ padding:20px;
 
 
 .title{
-
-font-size:2rem;
-letter-spacing:.15em;
-
+font-family:"Inter Tight",sans-serif;
+font-size:3rem;
+font-weight:800;
+letter-spacing:.08em;
+text-transform:uppercase;
 }
 
 
@@ -102,12 +102,11 @@ margin:18px 0;
 
 
 .archive-info{
-
-font-size:.7rem;
-letter-spacing:.18em;
+font-family:"Inter Tight",sans-serif;
+font-size:.9rem;
+letter-spacing:.15em;
 line-height:2;
-opacity:.75;
-
+opacity:.8;
 }
 
 
@@ -144,8 +143,6 @@ text-align:center;
 
 text-transform:uppercase;
 
-font-family:"Courier New",monospace;
-
 }
 
 
@@ -158,23 +155,13 @@ border-color:white;
 
 
 button{
-
-padding:12px 28px;
-
-cursor:crosshair;
-
-background:transparent;
-
-border:1px solid #777;
-
-color:var(--cream);
-
-font-family:"Courier New",monospace;
-
-letter-spacing:.2em;
-
-text-transform:uppercase;
-
+padding:14px 40px;
+background:var(--ink);
+color:var(--paper);
+border:none;
+font-family:"Inter Tight",sans-serif;
+font-weight:700;
+letter-spacing:.15em;
 }
 
 
