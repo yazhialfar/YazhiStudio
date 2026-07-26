@@ -179,7 +179,40 @@ body:before{
     min-height:20px;
 
 }
+.gate-line{
 
+    width:120px;
+    height:1px;
+    background:rgba(255,255,255,.3);
+    margin:25px 0;
+
+}
+
+
+.gate-info{
+
+    font-family:"Inter Tight",sans-serif;
+
+    font-size:.72rem;
+
+    letter-spacing:.18em;
+
+    line-height:2;
+
+    opacity:.7;
+
+}
+
+
+.gate-info span{
+
+    color:#b3372c;
+
+    display:inline-block;
+
+    margin-right:8px;
+
+}
 
 
 /* SITE */
@@ -391,28 +424,57 @@ footer{
 
 
     <div class="gate-version">
-        ARCHIVE BUILD 0.8
+        PRIVATE ARCHIVE / 2026
+    </div>
+
+
+    <div class="gate-line"></div>
+
+
+    <div class="gate-info">
+
+        <span>STATUS</span>
+        COLLECTION IN PROGRESS
+
+        <br><br>
+
+        <span>LOCATION</span>
+        SOUTHERN CHILE
+
+        <br><br>
+
+        <span>ACCESS</span>
+        INVITED MEMBERS ONLY
+
     </div>
 
 
     <p class="gate-text">
-        The studio is currently being arranged.
-        <br>
-        Some worlds are still finding their place.
+
+        This archive contains pieces, characters,
+        and worlds that are not always visible.
+
+        <br><br>
+
+        Some creations are waiting to be discovered.
+
     </p>
 
 
-    <input 
+
+    <input
         type="password"
         id="gate-input"
-        placeholder="Access Code"
+        placeholder="ARCHIVE KEY"
         autocomplete="off"
     >
 
 
+
     <button id="gate-submit">
-        ENTER
+        OPEN ARCHIVE
     </button>
+
 
 
     <div class="gate-error" id="gate-error"></div>
@@ -766,18 +828,34 @@ b => b.toString(16).padStart(2,"0")
 
 function revealSite(){
 
-
-document
-.getElementById("gate")
-.classList
-.add("hidden");
+const gate =
+document.getElementById("gate");
 
 
+gate.innerHTML = `
+
+<div class="gate-logo">
+ACCESS GRANTED
+</div>
+
+<div class="gate-version">
+WELCOME TO THE ARCHIVE
+</div>
+
+`;
+
+
+setTimeout(()=>{
+
+gate.classList.add("hidden");
 
 document
 .getElementById("site-content")
 .classList
 .remove("hidden");
+
+
+},1500);
 
 
 }
@@ -825,7 +903,7 @@ revealSite();
 document
 .getElementById("gate-error")
 .textContent =
-"Invalid access code.";
+""The archive does not recognize this key.";
 
 
 input.value="";
