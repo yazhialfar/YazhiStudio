@@ -1,176 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Yazhí Studio</title>
+
 <meta name="description" content="Creative studio from Southern Chile">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+
+
 <style>
-:root{--bg:#f5f3ee;--ink:#181818;--accent:#b3372c;--line:#d9d5cd}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:"Cormorant Garamond",serif;background:var(--bg);color:var(--ink);line-height:1.6}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.03;background-image:radial-gradient(#000 1px,transparent 1px);background-size:9px 9px}
-.wrap{max-width:1180px;margin:auto;padding:0 36px}
-header{position:fixed;top:0;width:100%;backdrop-filter:blur(8px);background:rgba(245,243,238,.8);border-bottom:1px solid var(--line)}
-.nav{display:flex;justify-content:space-between;padding:18px 0;font:700 .8rem Inter Tight,sans-serif;text-transform:uppercase}.nav a{text-decoration:none;color:inherit;margin-left:24px}
-.hero{min-height:100vh;display:flex;align-items:center}.hero h1{font:800 clamp(3rem,8vw,6rem) Inter Tight,sans-serif;text-transform:uppercase;line-height:.95;margin-bottom:20px}.hero p{max-width:650px;font-size:1.35rem}.link{display:inline-block;margin-top:30px;text-decoration:none;color:var(--accent);font:700 .85rem Inter Tight,sans-serif;text-transform:uppercase}
-section{padding:120px 0;border-top:1px solid var(--line)}h2{font:800 2.6rem Inter Tight,sans-serif;text-transform:uppercase;margin-bottom:40px}
-.world{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:70px}.img{background:#ddd;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font:700 .9rem Inter Tight,sans-serif;color:#666}
-footer{padding:80px 0;text-align:center;border-top:1px solid var(--line)}
-@media(max-width:800px){.world{grid-template-columns:1fr}.hero{padding-top:90px}}
-</style></head>
-<body>
-<div class="gate" id="gate">
-  <div class="gate-logo">YAZHÍ STUDIO</div>
 
-  <div class="gate-version">
-    ARCHIVE BUILD 0.8
-  </div>
+:root{
+    --bg:#f5f3ee;
+    --ink:#181818;
+    --accent:#b3372c;
+    --line:#d9d5cd;
+}
 
-  <p class="gate-text">
-    The studio is currently being arranged.
-    <br>
-    Some worlds are still finding their place.
-  </p>
 
-  <input
-    type="password"
-    id="gate-input"
-    placeholder="Access Code"
-    autocomplete="off">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-  <button id="gate-submit">
-    ENTER
-  </button>
 
-  <div class="gate-error" id="gate-error"></div>
-</div>
+html{
+    scroll-behavior:smooth;
+}
 
-<div id="site-content" class="hidden">  
-<header><div class="wrap nav"><div>YAZHÍ STUDIO</div><nav><a href="#worlds">Worlds</a><a href="#studio">Studio</a><a href="/catalogo">Archive</a><a href="#contact">Contact</a></nav></div></header>
 
-<section class="hero"><div class="wrap">
-<h1>Some worlds are invented.<br>Others slowly reveal themselves.</h1>
-<p>Yazhí Studio is a creative studio from Southern Chile where characters, places, and stories take shape through ceramics, illustration, painting, writing, and whatever medium feels right for the idea.</p>
-<a class="link" href="#worlds">Explore Worlds →</a>
-</div></section>
+body{
 
-<section id="worlds"><div class="wrap">
-<h2>Worlds</h2>
-
-<div class="world"><div class="img">Ceramic Characters Image</div><div><h3>Ceramic Characters</h3><p>Cats with names, professions, routines, and lives that quietly continue beyond the shelf. Every piece is made individually and carries its own identity.</p></div></div>
-
-<div class="world"><div class="img">Aristotelia Image</div><div><h3>Aristotelia</h3><p>Home to Guffys, Deprecines, Mnmnms, and every other being that continues to appear over time. It is an expanding universe where every character belongs to the same world.</p></div></div>
-
-<div class="world"><div class="img">YTC Image</div><div><h3>Yashi Tiger Club</h3><p>An ever growing archive of ceramic tigers. Every stripe is painted by hand and every tiger belongs to the same curious society.</p></div></div>
-
-<div class="world"><div class="img">Secret Catalog Image</div><div><h3>Secret Catalog</h3><p>A private archive containing pieces that rarely appear anywhere else.</p><a class="link" href="/catalogo">Open Archive →</a></div></div>
-
-</div></section>
-
-<section id="studio"><div class="wrap"><h2>The Studio</h2><p>We are a small creative studio based in Southern Chile. Our projects move between ceramics, illustration, painting, design, and writing. Every collection grows at its own rhythm. Some ideas become objects. Others remain drawings for years before finding their final form. The medium changes. The worlds remain.</p></div></section>
-
-<section><div class="wrap"><h2>Process</h2><div class="world"><div class="img">Sketch</div><div class="img">Clay • Paint • Fire • Story</div></div></div></section>
-
-<section><div class="wrap"><h2>Find a Piece</h2><p><a class="link" href="https://yazhialfarestudio.etsy.com">Visit Etsy →</a></p><p><a class="link" href="/catalogo">Open Secret Catalog →</a></p></div></section>
-
-<footer id="contact"><div class="wrap"><strong style="font-family:Inter Tight,sans-serif">YAZHÍ STUDIO</strong><br>Creative Studio<br>Southern Chile<br><br>yazhistudio@gmail.com<br>Instagram • Etsy</div></footer>
-</div>
-const CORRECT_HASH =
-'a82000d30987549db2772d29b70139f0fe8ea3af773a4da3c80b096711af7917';
-
-async function sha256(text){
-
-    const data = new TextEncoder().encode(text);
-
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-
-    return Array
-        .from(new Uint8Array(hashBuffer))
-        .map(b => b.toString(16).padStart(2,"0"))
-        .join("");
+    font-family:"Cormorant Garamond",serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
 
 }
 
-function revealSite(){
 
-    document
-        .getElementById("gate")
-        .classList
-        .add("hidden");
+body:before{
 
-    document
-        .getElementById("site-content")
-        .classList
-        .remove("hidden");
-
-}
-
-async function unlock(){
-
-    const input =
-    document.getElementById("gate-input");
-
-    const hash =
-    await sha256(
-        input.value
-        .trim()
-        .toUpperCase()
-    );
-
-    if(hash===CORRECT_HASH){
-
-        sessionStorage
-        .setItem("yazhi-access","1");
-
-        revealSite();
-
-    }else{
-
-        document
-        .getElementById("gate-error")
-        .textContent="Invalid access code.";
-
-        input.value="";
-
-        input.focus();
-
-    }
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.03;
+    background-image:radial-gradient(#000 1px,transparent 1px);
+    background-size:9px 9px;
 
 }
 
-document
-.getElementById("gate-submit")
-.addEventListener("click",unlock);
 
-document
-.getElementById("gate-input")
-.addEventListener("keydown",e=>{
 
-    if(e.key==="Enter")
-        unlock();
-
-});
-
-if(sessionStorage.getItem("yazhi-access")==="1"){
-
-    revealSite();
-
-}else{
-
-    document
-    .getElementById("gate-input")
-    .focus();
-
-}  
-</body></html>
 .hidden{
-    display:none;
+
+    display:none !important;
+
 }
+
+
+
+/* ACCESS GATE */
+
 
 .gate{
+
     min-height:100vh;
     display:flex;
     flex-direction:column;
@@ -180,39 +84,48 @@ if(sessionStorage.getItem("yazhi-access")==="1"){
     color:#f5f3ee;
     text-align:center;
     padding:40px;
+
 }
 
+
 .gate-logo{
+
     font-family:"Inter Tight",sans-serif;
     font-size:2rem;
     font-weight:800;
     letter-spacing:.08em;
     text-transform:uppercase;
+
 }
 
+
 .gate-version{
+
     margin-top:16px;
     font-family:"Inter Tight",sans-serif;
     font-size:.75rem;
     letter-spacing:.18em;
     opacity:.6;
+
 }
 
+
 .gate-text{
+
     margin:36px 0;
     max-width:420px;
     line-height:1.7;
     font-size:1.1rem;
+
 }
+
 
 .gate input{
 
     width:260px;
-
     padding:15px;
 
     background:transparent;
-
     border:1px solid rgba(255,255,255,.25);
 
     color:white;
@@ -220,20 +133,19 @@ if(sessionStorage.getItem("yazhi-access")==="1"){
     text-align:center;
 
     font-size:1rem;
-
     letter-spacing:.12em;
-
     text-transform:uppercase;
 
 }
 
+
 .gate input:focus{
 
     outline:none;
-
     border-color:white;
 
 }
+
 
 .gate button{
 
@@ -257,6 +169,7 @@ if(sessionStorage.getItem("yazhi-access")==="1"){
 
 }
 
+
 .gate-error{
 
     margin-top:18px;
@@ -266,3 +179,725 @@ if(sessionStorage.getItem("yazhi-access")==="1"){
     min-height:20px;
 
 }
+
+
+
+/* SITE */
+
+
+.wrap{
+
+    max-width:1180px;
+    margin:auto;
+    padding:0 36px;
+
+}
+
+
+
+header{
+
+    position:fixed;
+    top:0;
+    width:100%;
+
+    backdrop-filter:blur(8px);
+
+    background:rgba(245,243,238,.8);
+
+    border-bottom:1px solid var(--line);
+
+    z-index:10;
+
+}
+
+
+
+.nav{
+
+    display:flex;
+    justify-content:space-between;
+
+    padding:18px 0;
+
+    font:700 .8rem "Inter Tight",sans-serif;
+
+    text-transform:uppercase;
+
+}
+
+
+.nav a{
+
+    text-decoration:none;
+    color:inherit;
+    margin-left:24px;
+
+}
+
+
+
+.hero{
+
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+
+}
+
+
+
+.hero h1{
+
+    font:800 clamp(3rem,8vw,6rem) "Inter Tight",sans-serif;
+
+    text-transform:uppercase;
+
+    line-height:.95;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.hero p{
+
+    max-width:650px;
+
+    font-size:1.35rem;
+
+}
+
+
+
+.link{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    text-decoration:none;
+
+    color:var(--accent);
+
+    font:700 .85rem "Inter Tight",sans-serif;
+
+    text-transform:uppercase;
+
+}
+
+
+
+section{
+
+    padding:120px 0;
+
+    border-top:1px solid var(--line);
+
+}
+
+
+
+h2{
+
+    font:800 2.6rem "Inter Tight",sans-serif;
+
+    text-transform:uppercase;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.world{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+
+    margin-bottom:70px;
+
+}
+
+
+
+.img{
+
+    background:#ddd;
+
+    aspect-ratio:4/3;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font:700 .9rem "Inter Tight",sans-serif;
+
+    color:#666;
+
+}
+
+
+
+footer{
+
+    padding:80px 0;
+
+    text-align:center;
+
+    border-top:1px solid var(--line);
+
+}
+
+
+
+@media(max-width:800px){
+
+    .world{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .hero{
+
+        padding-top:90px;
+
+    }
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="gate" id="gate">
+
+    <div class="gate-logo">
+        YAZHÍ STUDIO
+    </div>
+
+
+    <div class="gate-version">
+        ARCHIVE BUILD 0.8
+    </div>
+
+
+    <p class="gate-text">
+        The studio is currently being arranged.
+        <br>
+        Some worlds are still finding their place.
+    </p>
+
+
+    <input 
+        type="password"
+        id="gate-input"
+        placeholder="Access Code"
+        autocomplete="off"
+    >
+
+
+    <button id="gate-submit">
+        ENTER
+    </button>
+
+
+    <div class="gate-error" id="gate-error"></div>
+
+
+</div>
+
+
+
+<div id="site-content" class="hidden">
+
+
+<header>
+
+<div class="wrap nav">
+
+<div>
+YAZHÍ STUDIO
+</div>
+
+
+<nav>
+
+<a href="#worlds">Worlds</a>
+
+<a href="#studio">Studio</a>
+
+<a href="/catalogo">Archive</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+
+</div>
+
+</header>
+<section class="hero">
+
+<div class="wrap">
+
+<h1>
+Some worlds are invented.<br>
+Others slowly reveal themselves.
+</h1>
+
+
+<p>
+Yazhí Studio is a creative studio from Southern Chile where characters, places, and stories take shape through ceramics, illustration, painting, writing, and whatever medium feels right for the idea.
+</p>
+
+
+<a class="link" href="#worlds">
+Explore Worlds →
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<section id="worlds">
+
+<div class="wrap">
+
+<h2>
+Worlds
+</h2>
+
+
+
+<div class="world">
+
+<div class="img">
+Ceramic Characters Image
+</div>
+
+
+<div>
+
+<h3>
+Ceramic Characters
+</h3>
+
+
+<p>
+Cats with names, professions, routines, and lives that quietly continue beyond the shelf. Every piece is made individually and carries its own identity.
+</p>
+
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="world">
+
+<div class="img">
+Aristotelia Image
+</div>
+
+
+<div>
+
+<h3>
+Aristotelia
+</h3>
+
+
+<p>
+Home to Guffys, Deprecines, Mnmnms, and every other being that continues to appear over time. It is an expanding universe where every character belongs to the same world.
+</p>
+
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="world">
+
+<div class="img">
+Yazhí Tiger Club Image
+</div>
+
+
+<div>
+
+<h3>
+Yazhí Tiger Club
+</h3>
+
+
+<p>
+An ever growing archive of ceramic tigers. Every stripe is painted by hand and every tiger belongs to the same curious society.
+</p>
+
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="world">
+
+<div class="img">
+Secret Catalog Image
+</div>
+
+
+<div>
+
+<h3>
+Secret Catalog
+</h3>
+
+
+<p>
+A private archive containing pieces that rarely appear anywhere else.
+</p>
+
+
+<a class="link" href="/catalogo">
+Open Archive →
+</a>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+<section id="studio">
+
+<div class="wrap">
+
+<h2>
+The Studio
+</h2>
+
+
+<p>
+We are a small creative studio based in Southern Chile. Our projects move between ceramics, illustration, painting, design, and writing. Every collection grows at its own rhythm. Some ideas become objects. Others remain drawings for years before finding their final form. The medium changes. The worlds remain.
+</p>
+
+
+</div>
+
+</section>
+
+
+
+
+<section>
+
+<div class="wrap">
+
+<h2>
+Process
+</h2>
+
+
+<div class="world">
+
+<div class="img">
+Sketch
+</div>
+
+
+<div class="img">
+Clay • Paint • Fire • Story
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section>
+
+<div class="wrap">
+
+
+<h2>
+Find a Piece
+</h2>
+
+
+<p>
+
+<a class="link" href="https://yazhialfarestudio.etsy.com">
+Visit Etsy →
+</a>
+
+</p>
+
+
+<p>
+
+<a class="link" href="/catalogo">
+Open Secret Catalog →
+</a>
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+
+<footer id="contact">
+
+<div class="wrap">
+
+<strong style="font-family:'Inter Tight',sans-serif">
+YAZHÍ STUDIO
+</strong>
+
+<br>
+
+Creative Studio
+
+<br>
+
+Southern Chile
+
+<br><br>
+
+yazhistudio@gmail.com
+
+<br>
+
+Instagram • Etsy
+
+
+</div>
+
+</footer>
+
+
+
+</div>
+
+
+
+<script>
+
+
+const CORRECT_HASH =
+'a82000d30987549db2772d29b70139f0fe8ea3af773a4da3c80b096711af7917';
+
+
+
+async function sha256(text){
+
+
+const data =
+new TextEncoder().encode(text);
+
+
+
+const hashBuffer =
+await crypto.subtle.digest(
+"SHA-256",
+data
+);
+
+
+
+return Array
+.from(new Uint8Array(hashBuffer))
+.map(
+b => b.toString(16).padStart(2,"0")
+)
+.join("");
+
+
+}
+
+
+
+
+
+function revealSite(){
+
+
+document
+.getElementById("gate")
+.classList
+.add("hidden");
+
+
+
+document
+.getElementById("site-content")
+.classList
+.remove("hidden");
+
+
+}
+
+
+
+
+
+async function unlock(){
+
+
+const input =
+document.getElementById("gate-input");
+
+
+
+const value =
+input.value
+.trim()
+.toUpperCase();
+
+
+
+const hash =
+await sha256(value);
+
+
+
+if(hash === CORRECT_HASH){
+
+
+sessionStorage.setItem(
+"yazhi-access",
+"1"
+);
+
+
+revealSite();
+
+
+
+}else{
+
+
+document
+.getElementById("gate-error")
+.textContent =
+"Invalid access code.";
+
+
+input.value="";
+
+
+input.focus();
+
+
+}
+
+
+}
+
+
+
+
+
+document
+.getElementById("gate-submit")
+.addEventListener(
+"click",
+unlock
+);
+
+
+
+
+
+document
+.getElementById("gate-input")
+.addEventListener(
+"keydown",
+function(e){
+
+
+if(e.key==="Enter"){
+
+unlock();
+
+}
+
+
+});
+
+
+
+
+
+if(
+sessionStorage.getItem("yazhi-access")==="1"
+){
+
+
+revealSite();
+
+
+
+}else{
+
+
+document
+.getElementById("gate-input")
+.focus();
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
