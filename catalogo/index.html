@@ -64,6 +64,62 @@
     border-bottom: 1px solid currentColor;
   }
 
+  .gate {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 22px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .gate.hidden { display: none; }
+
+  .gate .label {
+    color: var(--cream);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+  }
+
+  .gate input {
+    background: transparent;
+    border: 1px solid rgba(242, 237, 227, 0.35);
+    color: var(--cream);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    text-align: center;
+    padding: 14px 18px;
+    width: 220px;
+    text-transform: uppercase;
+  }
+
+  .gate input:focus { outline: none; border-color: var(--cream); }
+
+  .gate button {
+    background: var(--cream);
+    color: var(--ink);
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 26px;
+    cursor: pointer;
+  }
+
+  .gate .error {
+    color: var(--red);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    min-height: 1em;
+  }
+
+  #catalog-content.hidden { display: none; }
+
   @media (prefers-reduced-motion: reduce) {
     .page-item {
       opacity: 1;
@@ -75,6 +131,14 @@
 </head>
 <body>
 
+<div class="gate" id="gate">
+  <div class="label">THE SECRET CATALOG · ENTER PASSWORD</div>
+  <input type="password" id="gate-input" autocomplete="off" maxlength="20">
+  <button id="gate-submit">Enter</button>
+  <div class="error" id="gate-error"></div>
+</div>
+
+<div id="catalog-content" class="hidden">
   <div class="page-list">
     <div class="page-item"><img src="01-cover.png" alt="The Secret Catalog — portada"></div>
     <div class="page-item"><img src="02-welcome.png" alt="Bienvenida y envíos"></div>
@@ -87,18 +151,60 @@
     Yazhí Studio · Temuco, Chile — <a href="mailto:hello@yazhistudio.com">contacto</a>
   </footer>
 
-<script>
-  const items = document.querySelectorAll('.page-item');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+</div>
 
-  items.forEach(item => observer.observe(item));
+<script>
+  // Hash SHA-256 de la contraseña — no queda en texto plano en el código fuente
+  const CORRECT_HASH = '3f26920c0355f60c1f9fb93bb54eccf94075264365c0ea90068c127bf2fe9ac';
+
+  async function sha256(text) {
+    const data = new TextEncoder().encode(text);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  function revealCatalog() {
+    document.getElementById('gate').classList.add('hidden');
+    document.getElementById('catalog-content').classList.remove('hidden');
+
+    const items = document.querySelectorAll('.page-item');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    items.forEach(item => observer.observe(item));
+  }
+
+  async function tryUnlock() {
+    const input = document.getElementById('gate-input');
+    const error = document.getElementById('gate-error');
+    const hash = await sha256(input.value.trim().toUpperCase());
+
+    if (hash === CORRECT_HASH) {
+      sessionStorage.setItem('ytc-unlocked', '1');
+      revealCatalog();
+    } else {
+      error.textContent = 'Incorrect password.';
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  document.getElementById('gate-submit').addEventListener('click', tryUnlock);
+  document.getElementById('gate-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') tryUnlock();
+  });
+
+  // Si ya se ingresó la clave correcta en esta sesión del navegador, no la vuelve a pedir
+  if (sessionStorage.getItem('ytc-unlocked') === '1') {
+    revealCatalog();
+  } else {
+    document.getElementById('gate-input').focus();
+  }
 </script>
 
 </body>
