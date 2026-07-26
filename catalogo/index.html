@@ -52,9 +52,7 @@ background-size:8px 8px;
 
 
 .hidden{
-
-display:none;
-
+    display:none !important;
 }
 
 
@@ -576,24 +574,32 @@ i=>observer.observe(i)
 
 
 
-if(
-sessionStorage.getItem("ysc")
-){
+if(sessionStorage.getItem("ysc")){
 
-start();
-
+    start();
 
 }else{
 
+    document
+    .getElementById("gate")
+    .classList
+    .remove("hidden");
 
-document
-.getElementById("pw")
-.focus();
+    document
+    .getElementById("loading")
+    .classList
+    .add("hidden");
 
+    document
+    .getElementById("catalog")
+    .classList
+    .add("hidden");
+
+    document
+    .getElementById("pw")
+    .focus();
 
 }
-
-
 
 </script>
 
