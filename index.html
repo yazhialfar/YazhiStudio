@@ -1,267 +1,53 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yazhí Studio — Ceramic Beings from Southern Chile</title>
-<meta name="description" content="Handmade ceramic sculptures. Characters with names, worlds, and stories. Made in Southern Chile.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yazhí Studio</title>
+<meta name="description" content="Creative studio from Southern Chile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&family=Liter&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --red: #e3272a;
-    --ink: #111111;
-    --porcelain: #f6f5f2;
-    --gray: #b9b8b5;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--porcelain);
-    color: var(--ink);
-    font-family: 'Liter', Georgia, serif;
-    font-size: 17px;
-    line-height: 1.65;
-  }
-
-  a { color: inherit; }
-
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
-
-  /* ---------- HEADER ---------- */
-  header {
-    position: sticky; top: 0; z-index: 50;
-    background: var(--porcelain);
-    border-bottom: 1px solid var(--gray);
-  }
-  .header-inner {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 20px 32px; max-width: 1100px; margin: 0 auto;
-  }
-  .brand {
-    font-family: 'Inter Tight', sans-serif; font-weight: 800;
-    text-transform: uppercase; letter-spacing: -0.015em; font-size: 1.15rem;
-  }
-  .brand span { color: var(--red); }
-  nav { display: flex; gap: 30px; align-items: center; }
-  nav a {
-    text-decoration: none; font-family: 'Inter Tight', sans-serif; font-weight: 700;
-    font-size: 0.72rem; text-transform: uppercase;
-    padding-bottom: 3px; border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease, color 0.2s ease;
-  }
-  nav a:hover { border-color: var(--red); color: var(--red); }
-  @media (max-width: 640px) { nav a:not(.nav-contact) { display: none; } }
-
-  /* ---------- HERO ---------- */
-  .hero { padding: 100px 32px 80px; max-width: 1100px; margin: 0 auto; text-align: center; }
-  .hero .eyebrow {
-    font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 0.75rem;
-    text-transform: uppercase; color: var(--red); margin-bottom: 22px;
-  }
-  .hero h1 {
-    font-family: 'Inter Tight', sans-serif; font-weight: 800; text-transform: uppercase;
-    letter-spacing: -0.02em; font-size: clamp(2.6rem, 7vw, 5rem); line-height: 0.98;
-  }
-  .hero h1 span { color: var(--red); }
-  .hero p.lede {
-    max-width: 520px; margin: 28px auto 0; font-size: 1.15rem;
-    color: rgba(17,17,17,0.72); font-family: 'Liter', serif;
-  }
-  .hero-cta { margin-top: 40px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-  .btn {
-    font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 0.78rem;
-    text-transform: uppercase; padding: 16px 30px; text-decoration: none;
-    display: inline-block; border: 1.5px solid var(--ink);
-    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  }
-  .btn-solid { background: var(--red); color: var(--porcelain); border-color: var(--red); }
-  .btn-solid:hover { background: var(--ink); border-color: var(--ink); }
-  .btn-outline:hover { background: var(--ink); color: var(--porcelain); border-color: var(--ink); }
-
-  /* ---------- WORLDS ---------- */
-  section.worlds { padding: 90px 0; border-top: 1px solid var(--gray); }
-  .worlds-head { text-align: center; margin-bottom: 56px; }
-  .worlds-head .eyebrow {
-    font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 0.72rem;
-    text-transform: uppercase; color: var(--red); margin-bottom: 14px;
-  }
-  .worlds-head h2 {
-    font-family: 'Inter Tight', sans-serif; font-weight: 800; text-transform: uppercase;
-    letter-spacing: -0.015em; font-size: clamp(2rem, 4.5vw, 3rem);
-  }
-
-  .world-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gray); border: 1px solid var(--gray); }
-  @media (max-width: 720px) { .world-grid { grid-template-columns: 1fr; } }
-
-  .world-card { background: var(--porcelain); display: flex; flex-direction: column; }
-  .world-card .frame { aspect-ratio: 4/3; overflow: hidden; background: #ece9e3; }
-  .world-card .frame img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
-  .world-card:hover .frame img { transform: scale(1.04); }
-
-  .world-card .body { padding: 30px 32px 36px; }
-  .world-card .body .tag {
-    font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 0.65rem;
-    text-transform: uppercase; color: var(--red); margin-bottom: 10px; display: block;
-  }
-  .world-card .body h3 {
-    font-family: 'Inter Tight', sans-serif; font-weight: 800; text-transform: uppercase;
-    letter-spacing: -0.01em; font-size: 1.5rem; margin-bottom: 12px;
-  }
-  .world-card .body p { font-family: 'Liter', serif; color: rgba(17,17,17,0.68); font-size: 0.98rem; }
-
-  /* ---------- ABOUT ---------- */
-  section.about-section { padding: 90px 0; border-top: 1px solid var(--gray); }
-  .about {
-    display: grid; grid-template-columns: 74px 1fr; gap: 28px;
-    max-width: 620px; margin: 0 auto;
-  }
-  .stamp {
-    width: 74px; height: 74px; border-radius: 50%; border: 1.5px solid var(--red);
-    display: flex; align-items: center; justify-content: center; flex-direction: column;
-    font-family: 'Inter Tight', sans-serif; text-align: center; line-height: 1.15;
-    flex-shrink: 0; color: var(--red);
-  }
-  .stamp .n { font-size: 0.95rem; font-weight: 800; }
-  .stamp .t { font-size: 0.48rem; font-weight: 700; text-transform: uppercase; opacity: 0.85; }
-  .about-head .eyebrow {
-    font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 0.72rem;
-    text-transform: uppercase; color: var(--red); margin-bottom: 14px; text-align: center;
-  }
-  .about-head h2 {
-    font-family: 'Inter Tight', sans-serif; font-weight: 800; text-transform: uppercase;
-    letter-spacing: -0.015em; font-size: clamp(2rem, 4.5vw, 3rem); text-align: center; margin-bottom: 50px;
-  }
-  .about p { margin-bottom: 16px; font-family: 'Liter', serif; font-size: 1.06rem; }
-  .about p:last-child { margin-bottom: 0; }
-
-  /* ---------- CTA STRIP ---------- */
-  .cta-strip { background: var(--ink); color: var(--porcelain); padding: 80px 0; text-align: center; }
-  .cta-strip .eyebrow {
-    font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 0.72rem;
-    text-transform: uppercase; color: var(--gray); margin-bottom: 18px;
-  }
-  .cta-strip h2 {
-    font-family: 'Inter Tight', sans-serif; font-weight: 800; text-transform: uppercase;
-    letter-spacing: -0.015em; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 34px;
-  }
-  .cta-strip .btn-solid { background: var(--red); border-color: var(--red); }
-  .cta-strip .btn-outline { border-color: var(--porcelain); color: var(--porcelain); }
-  .cta-strip .btn-outline:hover { background: var(--porcelain); color: var(--ink); }
-
-  footer { padding: 50px 32px 60px; text-align: center; }
-  footer .contact-line {
-    font-family: 'Inter Tight', sans-serif; font-weight: 800; text-transform: uppercase;
-    letter-spacing: -0.015em; font-size: 1.3rem; margin-bottom: 18px;
-  }
-  footer .links {
-    display: flex; gap: 24px; justify-content: center;
-    font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 0.72rem; text-transform: uppercase;
-  }
-  footer .links a { text-decoration: none; color: var(--red); border-bottom: 1px solid var(--red); }
-  footer .fine {
-    margin-top: 34px; font-size: 0.7rem; color: var(--gray);
-    font-family: 'Inter Tight', sans-serif; font-weight: 700; text-transform: uppercase;
-  }
-
-  @media (max-width: 620px) { .about { grid-template-columns: 1fr; } .about .stamp { margin: 0 auto; } }
-</style>
-</head>
+:root{--bg:#f5f3ee;--ink:#181818;--accent:#b3372c;--line:#d9d5cd}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:"Cormorant Garamond",serif;background:var(--bg);color:var(--ink);line-height:1.6}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.03;background-image:radial-gradient(#000 1px,transparent 1px);background-size:9px 9px}
+.wrap{max-width:1180px;margin:auto;padding:0 36px}
+header{position:fixed;top:0;width:100%;backdrop-filter:blur(8px);background:rgba(245,243,238,.8);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;padding:18px 0;font:700 .8rem Inter Tight,sans-serif;text-transform:uppercase}.nav a{text-decoration:none;color:inherit;margin-left:24px}
+.hero{min-height:100vh;display:flex;align-items:center}.hero h1{font:800 clamp(3rem,8vw,6rem) Inter Tight,sans-serif;text-transform:uppercase;line-height:.95;margin-bottom:20px}.hero p{max-width:650px;font-size:1.35rem}.link{display:inline-block;margin-top:30px;text-decoration:none;color:var(--accent);font:700 .85rem Inter Tight,sans-serif;text-transform:uppercase}
+section{padding:120px 0;border-top:1px solid var(--line)}h2{font:800 2.6rem Inter Tight,sans-serif;text-transform:uppercase;margin-bottom:40px}
+.world{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:70px}.img{background:#ddd;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font:700 .9rem Inter Tight,sans-serif;color:#666}
+footer{padding:80px 0;text-align:center;border-top:1px solid var(--line)}
+@media(max-width:800px){.world{grid-template-columns:1fr}.hero{padding-top:90px}}
+</style></head>
 <body>
+<header><div class="wrap nav"><div>YAZHÍ STUDIO</div><nav><a href="#worlds">Worlds</a><a href="#studio">Studio</a><a href="/catalogo">Archive</a><a href="#contact">Contact</a></nav></div></header>
 
-<header>
-  <div class="header-inner">
-    <div class="brand">Yazhí <span>Studio</span></div>
-    <nav>
-      <a href="#worlds">Worlds</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="nav-contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<section class="hero"><div class="wrap">
+<h1>Some worlds are invented.<br>Others slowly reveal themselves.</h1>
+<p>Yazhí Studio is a creative studio from Southern Chile where characters, places, and stories take shape through ceramics, illustration, painting, writing, and whatever medium feels right for the idea.</p>
+<a class="link" href="#worlds">Explore Worlds →</a>
+</div></section>
 
-<section class="hero">
-  <div class="eyebrow">A ceramic studio in Southern Chile</div>
-  <h1>Beings, <span>cataloged</span><br>one at a time.</h1>
-  <p class="lede">Every piece begins as a character — named, particular, irreplaceable — before it becomes an object you can hold.</p>
-  <div class="hero-cta">
-    <a href="https://yazhialfarestudio.etsy.com" target="_blank" rel="noopener" class="btn btn-solid">Shop on Etsy</a>
-    <a href="/catalogo" class="btn btn-outline">The Secret Catalog</a>
-  </div>
-</section>
+<section id="worlds"><div class="wrap">
+<h2>Worlds</h2>
 
-<section class="worlds" id="worlds">
-  <div class="wrap">
-    <div class="worlds-head">
-      <div class="eyebrow">Two worlds, one studio</div>
-      <h2>What we make</h2>
-    </div>
+<div class="world"><div class="img">Ceramic Characters Image</div><div><h3>Ceramic Characters</h3><p>Cats with names, professions, routines, and lives that quietly continue beyond the shelf. Every piece is made individually and carries its own identity.</p></div></div>
 
-    <div class="world-grid">
-      <div class="world-card">
-        <div class="frame">
-          <img src="images/GRORGS.jpg" alt="Grorgs, a ceramic Guffy creature">
-        </div>
-        <div class="body">
-          <span class="tag">Aristotelia</span>
-          <h3>Guffys &amp; Deprecins</h3>
-          <p>Strange, quiet beings from an unnamed place. Blue, red, and inexplicably themselves.</p>
-        </div>
-      </div>
+<div class="world"><div class="img">Aristotelia Image</div><div><h3>Aristotelia</h3><p>Home to Guffys, Deprecines, Mnmnms, and every other being that continues to appear over time. It is an expanding universe where every character belongs to the same world.</p></div></div>
 
-      <div class="world-card">
-        <div class="frame">
-          <img src="images/ALBERTS.jpg" alt="Alberts, a ceramic cat character">
-        </div>
-        <div class="body">
-          <span class="tag">The Cats</span>
-          <h3>Ceramic Characters</h3>
-          <p>Cats with opinions, careers, and complicated feelings about everything.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="world"><div class="img">YTC Image</div><div><h3>Yashi Tiger Club</h3><p>An ever growing archive of ceramic tigers. Every stripe is painted by hand and every tiger belongs to the same curious society.</p></div></div>
 
-<section class="about-section" id="about">
-  <div class="wrap">
-    <div class="about-head">
-      <div class="eyebrow">About the studio</div>
-      <h2>Hello.</h2>
-    </div>
-    <div class="about">
-      <div class="stamp"><span class="n">SUR</span><span class="t">Chile</span></div>
-      <div>
-        <p>We are two. We are located in Southern Chile.</p>
-        <p>In our studio we work in different mediums and formats to bring ideas to the material world. For now, we are mainly focused on ceramic beings and their stories.</p>
-        <p>Each one starts as a character before it becomes an object — and it stays fragile, so it still needs care to keep it with you for ages.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="world"><div class="img">Secret Catalog Image</div><div><h3>Secret Catalog</h3><p>A private archive containing pieces that rarely appear anywhere else.</p><a class="link" href="/catalogo">Open Archive →</a></div></div>
 
-<div class="cta-strip">
-  <div class="wrap">
-    <div class="eyebrow">Where to find the pieces</div>
-    <h2>Every piece lives in one of two places.</h2>
-    <div class="hero-cta">
-      <a href="https://yazhialfarestudio.etsy.com" target="_blank" rel="noopener" class="btn btn-solid">Shop on Etsy</a>
-      <a href="/catalogo" class="btn btn-outline">The Secret Catalog</a>
-    </div>
-  </div>
-</div>
+</div></section>
 
-<footer id="contact">
-  <div class="contact-line">Let's talk.</div>
-  <div class="links">
-    <a href="https://www.instagram.com/yazhi.studio/" target="_blank" rel="noopener">@yazhi.studio</a>
-    <a href="mailto:hello@yazhistudio.com">Email</a>
-  </div>
-  <div class="fine">Yazhí Studio — Handmade ceramic sculptures, Southern Chile</div>
-</footer>
+<section id="studio"><div class="wrap"><h2>The Studio</h2><p>We are a small creative studio based in Southern Chile. Our projects move between ceramics, illustration, painting, design, and writing. Every collection grows at its own rhythm. Some ideas become objects. Others remain drawings for years before finding their final form. The medium changes. The worlds remain.</p></div></section>
 
-</body>
-</html>
+<section><div class="wrap"><h2>Process</h2><div class="world"><div class="img">Sketch</div><div class="img">Clay • Paint • Fire • Story</div></div></div></section>
+
+<section><div class="wrap"><h2>Find a Piece</h2><p><a class="link" href="https://yazhialfarestudio.etsy.com">Visit Etsy →</a></p><p><a class="link" href="/catalogo">Open Secret Catalog →</a></p></div></section>
+
+<footer id="contact"><div class="wrap"><strong style="font-family:Inter Tight,sans-serif">YAZHÍ STUDIO</strong><br>Creative Studio<br>Southern Chile<br><br>hello@yazhistudio.com<br>Instagram • Etsy</div></footer>
+</body></html>
