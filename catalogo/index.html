@@ -26,6 +26,49 @@ button{padding:12px 28px;cursor:crosshair}
 .page-item+ .page-item{margin-top:24px}
 img{display:block;width:100%;height:auto}
 footer{text-align:center;padding:60px;color:#999;font-size:.75rem;letter-spacing:.15em}
+.archive-line{
+width:120px;
+height:1px;
+background:#777;
+margin:18px 0;
+}
+
+
+.archive-info{
+font-size:.7rem;
+letter-spacing:.18em;
+line-height:2;
+opacity:.75;
+}
+
+
+.archive-info span{
+color:var(--red);
+}
+
+
+.gate-text{
+max-width:400px;
+line-height:1.7;
+font-size:.95rem;
+opacity:.85;
+}
+
+
+button{
+background:transparent;
+border:1px solid #777;
+color:var(--cream);
+font-family:"Courier New",monospace;
+letter-spacing:.2em;
+text-transform:uppercase;
+}
+
+
+button:hover{
+background:var(--cream);
+color:var(--ink);
+}
 </style></head><body>
 <div id="gate" class="gate">
 
@@ -33,14 +76,11 @@ footer{text-align:center;padding:60px;color:#999;font-size:.75rem;letter-spacing
 YAZHÍ STUDIO
 </div>
 
-
 <div class="label">
 PRIVATE ARCHIVE / 2026
 </div>
 
-
 <div class="archive-line"></div>
-
 
 <div class="archive-info">
 
@@ -63,9 +103,13 @@ SOUTHERN CHILE
 INVITED MEMBERS ONLY
 
 </div>
+
+
 <p class="gate-text">
 
 Some pieces exist before they become visible.
+
+<br>
 
 This archive contains objects from unfinished worlds.
 
@@ -76,7 +120,6 @@ This archive contains objects from unfinished worlds.
 id="pw" 
 type="password"
 placeholder="ARCHIVE KEY"
-autocomplete="off"
 >
 
 
@@ -85,8 +128,7 @@ OPEN ARCHIVE
 </button>
 
 
-<div id="err" class="error"></div>
-
+<div id="err" class="error">
 
 </div>
 <div id="loading" class="loading hidden">
@@ -122,67 +164,3 @@ document.querySelectorAll(".page-item").forEach(i=>o.observe(i));
 }
 if(sessionStorage.getItem("ysc"))start(); else pw.focus();
 </script></body></html>
-.archive-line{
-
-width:120px;
-height:1px;
-background:#777;
-margin:18px 0;
-
-}
-
-
-.archive-info{
-
-font-size:.7rem;
-letter-spacing:.18em;
-line-height:2;
-opacity:.75;
-
-}
-
-
-.archive-info span{
-
-color:var(--red);
-
-}
-
-
-.gate-text{
-
-max-width:400px;
-
-line-height:1.7;
-
-font-size:.95rem;
-
-opacity:.85;
-
-}
-
-
-button{
-
-background:transparent;
-
-border:1px solid #777;
-
-color:var(--cream);
-
-font-family:"Courier New",monospace;
-
-letter-spacing:.2em;
-
-text-transform:uppercase;
-
-}
-
-
-button:hover{
-
-background:var(--cream);
-
-color:var(--ink);
-
-}
