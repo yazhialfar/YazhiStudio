@@ -28,14 +28,70 @@ img{display:block;width:100%;height:auto}
 footer{text-align:center;padding:60px;color:#999;font-size:.75rem;letter-spacing:.15em}
 </style></head><body>
 <div id="gate" class="gate">
-<div class="title">YAZHÍ STUDIO</div>
-<div class="label">ARCHIVE ACCESS</div>
-<div>Authorization Required</div>
-<input id="pw" type="password"><button onclick="unlock()">ENTER</button><div id="err" class="error"></div>
+
+<div class="title">
+YAZHÍ STUDIO
+</div>
+
+
+<div class="label">
+PRIVATE ARCHIVE / 2026
+</div>
+
+
+<div class="archive-line"></div>
+
+
+<div class="archive-info">
+
+<span>DOCUMENT</span>
+SECRET CATALOG
+
+<br><br>
+
+<span>STATUS</span>
+RESTRICTED COLLECTION
+
+<br><br>
+
+<span>LOCATION</span>
+SOUTHERN CHILE
+
+<br><br>
+
+<span>ACCESS</span>
+INVITED MEMBERS ONLY
+
+</div>
+<p class="gate-text">
+
+Some pieces exist before they become visible.
+
+This archive contains objects from unfinished worlds.
+
+</p>
+
+
+<input 
+id="pw" 
+type="password"
+placeholder="ARCHIVE KEY"
+autocomplete="off"
+>
+
+
+<button onclick="unlock()">
+OPEN ARCHIVE
+</button>
+
+
+<div id="err" class="error"></div>
+
+
 </div>
 <div id="loading" class="loading hidden">
-<div class="title">ACCESS GRANTED</div><div>Loading archive...</div><div class="bar"><div class="fill" id="fill"></div></div>
-</div>
+<<div class="title">ACCESS GRANTED</div>
+<div class="label">OPENING PRIVATE ARCHIVE</div>
 <div id="catalog" class="hidden">
 <div class="page-list">
 <div class="page-item"><img loading="lazy" src="01-cover.png"></div>
@@ -51,7 +107,7 @@ const CORRECT_HASH='a82000d30987549db2772d29b70139f0fe8ea3af773a4da3c80b096711af
 async function sha256(t){const b=new TextEncoder().encode(t);const h=await crypto.subtle.digest("SHA-256",b);return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,"0")).join("")}
 async function unlock(){
 let v=document.getElementById('pw').value.trim().toUpperCase();
-if(await sha256(v)!==CORRECT_HASH){err.textContent="Invalid access code.";return;}
+if(await sha256(v)!==CORRECT_HASH){err.textContent="Archive key not recognized.";return;}
 sessionStorage.setItem("ysc","1");
 start();
 }
@@ -66,3 +122,67 @@ document.querySelectorAll(".page-item").forEach(i=>o.observe(i));
 }
 if(sessionStorage.getItem("ysc"))start(); else pw.focus();
 </script></body></html>
+.archive-line{
+
+width:120px;
+height:1px;
+background:#777;
+margin:18px 0;
+
+}
+
+
+.archive-info{
+
+font-size:.7rem;
+letter-spacing:.18em;
+line-height:2;
+opacity:.75;
+
+}
+
+
+.archive-info span{
+
+color:var(--red);
+
+}
+
+
+.gate-text{
+
+max-width:400px;
+
+line-height:1.7;
+
+font-size:.95rem;
+
+opacity:.85;
+
+}
+
+
+button{
+
+background:transparent;
+
+border:1px solid #777;
+
+color:var(--cream);
+
+font-family:"Courier New",monospace;
+
+letter-spacing:.2em;
+
+text-transform:uppercase;
+
+}
+
+
+button:hover{
+
+background:var(--cream);
+
+color:var(--ink);
+
+}
