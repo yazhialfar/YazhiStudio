@@ -1,86 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>The Secret Catalog — Yazhí Studio</title>
+
 <meta name="robots" content="noindex,nofollow">
+
+
 <style>
-:root{--cream:#f2ede3;--ink:#171513;--red:#b3372c}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--ink);color:var(--cream);font-family:"Courier New",monospace}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;
-background-image:radial-gradient(circle,#fff 1px,transparent 1px);
-background-size:8px 8px}
-.gate,.loading{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:20px}
-.hidden{display:none}
-.label{letter-spacing:.25em;font-size:.75rem;opacity:.75}
-.title{font-size:2rem;letter-spacing:.15em}
-input{background:transparent;border:1px solid #777;color:#fff;padding:14px;width:240px;text-align:center;text-transform:uppercase}
-input:focus{outline:none;border-color:#fff}
-button{padding:12px 28px;cursor:crosshair}
-.error{color:var(--red);height:1rem}
-.bar{width:220px;height:8px;border:1px solid #777}.fill{height:100%;width:0;background:var(--cream);transition:width .8s}
-.page-list{max-width:900px;margin:0 auto;padding:30px 0}
-.page-item{opacity:0;transition:opacity .7s}
-.page-item.visible{opacity:1}
-.page-item+ .page-item{margin-top:24px}
-img{display:block;width:100%;height:auto}
-footer{text-align:center;padding:60px;color:#999;font-size:.75rem;letter-spacing:.15em}
+
+:root{
+--cream:#f2ede3;
+--ink:#171513;
+--red:#b3372c;
+}
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+body{
+
+background:var(--ink);
+color:var(--cream);
+font-family:"Courier New",monospace;
+
+}
+
+
+body:before{
+
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.05;
+
+background-image:
+radial-gradient(circle,#fff 1px,transparent 1px);
+
+background-size:8px 8px;
+
+}
+
+
+.hidden{
+
+display:none;
+
+}
+
+
+.gate,
+.loading{
+
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:18px;
+text-align:center;
+padding:20px;
+
+}
+
+
+.title{
+
+font-size:2rem;
+letter-spacing:.15em;
+
+}
+
+
+.label{
+
+letter-spacing:.25em;
+font-size:.75rem;
+opacity:.75;
+
+}
+
+
 .archive-line{
+
 width:120px;
 height:1px;
 background:#777;
 margin:18px 0;
+
 }
 
 
 .archive-info{
+
 font-size:.7rem;
 letter-spacing:.18em;
 line-height:2;
 opacity:.75;
+
 }
 
 
 .archive-info span{
+
 color:var(--red);
+
 }
 
 
 .gate-text{
+
 max-width:400px;
 line-height:1.7;
 font-size:.95rem;
 opacity:.85;
+
+}
+
+
+input{
+
+background:transparent;
+
+border:1px solid #777;
+
+color:white;
+
+padding:14px;
+
+width:240px;
+
+text-align:center;
+
+text-transform:uppercase;
+
+font-family:"Courier New",monospace;
+
+}
+
+
+input:focus{
+
+outline:none;
+border-color:white;
+
 }
 
 
 button{
+
+padding:12px 28px;
+
+cursor:crosshair;
+
 background:transparent;
+
 border:1px solid #777;
+
 color:var(--cream);
+
 font-family:"Courier New",monospace;
+
 letter-spacing:.2em;
+
 text-transform:uppercase;
+
 }
 
 
 button:hover{
+
 background:var(--cream);
+
 color:var(--ink);
+
 }
-</style></head><body>
+
+
+.error{
+
+color:var(--red);
+height:1rem;
+
+}
+
+
+.bar{
+
+width:220px;
+height:8px;
+border:1px solid #777;
+
+}
+
+
+.fill{
+
+height:100%;
+width:0;
+
+background:var(--cream);
+
+transition:width .8s;
+
+}
+
+
+
+.page-list{
+
+max-width:900px;
+margin:0 auto;
+padding:30px 0;
+
+}
+
+
+.page-item{
+
+opacity:0;
+transition:opacity .7s;
+
+}
+
+
+.page-item.visible{
+
+opacity:1;
+
+}
+
+
+.page-item + .page-item{
+
+margin-top:24px;
+
+}
+
+
+img{
+
+display:block;
+width:100%;
+height:auto;
+
+}
+
+
+footer{
+
+text-align:center;
+padding:60px;
+color:#999;
+font-size:.75rem;
+letter-spacing:.15em;
+
+}
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<!-- PRIVATE ARCHIVE ACCESS -->
+
+
 <div id="gate" class="gate">
+
 
 <div class="title">
 YAZHÍ STUDIO
 </div>
 
+
 <div class="label">
 PRIVATE ARCHIVE / 2026
 </div>
 
+
 <div class="archive-line"></div>
+
 
 <div class="archive-info">
 
@@ -105,21 +319,24 @@ INVITED MEMBERS ONLY
 </div>
 
 
+
 <p class="gate-text">
 
 Some pieces exist before they become visible.
 
-<br>
+<br><br>
 
 This archive contains objects from unfinished worlds.
 
 </p>
 
 
-<input 
-id="pw" 
+
+<input
+id="pw"
 type="password"
 placeholder="ARCHIVE KEY"
+autocomplete="off"
 >
 
 
@@ -128,39 +345,290 @@ OPEN ARCHIVE
 </button>
 
 
-<div id="err" class="error">
+<div id="err" class="error"></div>
+
 
 </div>
+
+
+
+
+<!-- LOADING -->
+
+
 <div id="loading" class="loading hidden">
-<<div class="title">ACCESS GRANTED</div>
-<div class="label">OPENING PRIVATE ARCHIVE</div>
+
+
+<div class="title">
+ACCESS GRANTED
+</div>
+
+
+<div class="label">
+OPENING PRIVATE ARCHIVE
+</div>
+
+
+<div class="bar">
+
+<div class="fill" id="fill"></div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- CATALOG -->
+
+
 <div id="catalog" class="hidden">
+
+
 <div class="page-list">
-<div class="page-item"><img loading="lazy" src="01-cover.png"></div>
-<div class="page-item"><img loading="lazy" src="02-welcome.png"></div>
-<div class="page-item"><img loading="lazy" src="03-caos-gula.png"></div>
-<div class="page-item"><img loading="lazy" src="04-detalle.png"></div>
-<div class="page-item"><img loading="lazy" src="05-grid.png"></div>
+
+
+<div class="page-item">
+<img loading="lazy" src="01-cover.png">
 </div>
-<footer>ARCHIVE VERSION 2026.07<br>YAZHÍ STUDIO<br>SOUTHERN CHILE<br><br>END OF FILE</footer>
+
+
+<div class="page-item">
+<img loading="lazy" src="02-welcome.png">
 </div>
+
+
+<div class="page-item">
+<img loading="lazy" src="03-caos-gula.png">
+</div>
+
+
+<div class="page-item">
+<img loading="lazy" src="04-detalle.png">
+</div>
+
+
+<div class="page-item">
+<img loading="lazy" src="05-grid.png">
+</div>
+
+
+</div>
+
+
+
+<footer>
+
+ARCHIVE VERSION 2026.07
+
+<br>
+
+YAZHÍ STUDIO
+
+<br>
+
+SOUTHERN CHILE
+
+<br><br>
+
+END OF FILE
+
+</footer>
+
+
+</div>
+
+
+
+
+
 <script>
-const CORRECT_HASH='a82000d30987549db2772d29b70139f0fe8ea3af773a4da3c80b096711af7917';
-async function sha256(t){const b=new TextEncoder().encode(t);const h=await crypto.subtle.digest("SHA-256",b);return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+
+
+const CORRECT_HASH =
+'a82000d30987549db2772d29b70139f0fe8ea3af773a4da3c80b096711af7917';
+
+
+
+async function sha256(t){
+
+const b =
+new TextEncoder().encode(t);
+
+
+const h =
+await crypto.subtle.digest(
+"SHA-256",
+b
+);
+
+
+return [
+...new Uint8Array(h)
+]
+.map(
+x=>x.toString(16).padStart(2,"0")
+)
+.join("");
+
+}
+
+
+
+
 async function unlock(){
-let v=document.getElementById('pw').value.trim().toUpperCase();
-if(await sha256(v)!==CORRECT_HASH){err.textContent="Archive key not recognized.";return;}
-sessionStorage.setItem("ysc","1");
+
+
+let v =
+document
+.getElementById("pw")
+.value
+.trim()
+.toUpperCase();
+
+
+
+if(
+await sha256(v)!==
+CORRECT_HASH
+){
+
+document
+.getElementById("err")
+.textContent =
+"Archive key not recognized.";
+
+return;
+
+}
+
+
+sessionStorage.setItem(
+"ysc",
+"1"
+);
+
+
 start();
+
+
 }
+
+
+
+
+
 function start(){
-gate.classList.add("hidden");loading.classList.remove("hidden");
-setTimeout(()=>fill.style.width="100%",50);
+
+
+document
+.getElementById("gate")
+.classList
+.add("hidden");
+
+
+
+document
+.getElementById("loading")
+.classList
+.remove("hidden");
+
+
+
 setTimeout(()=>{
-loading.classList.add("hidden");catalog.classList.remove("hidden");
-let o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");o.unobserve(e.target)}}),{threshold:.15});
-document.querySelectorAll(".page-item").forEach(i=>o.observe(i));
-},1000);
+
+document
+.getElementById("fill")
+.style
+.width="100";
+
+},50);
+
+
+
+setTimeout(()=>{
+
+
+document
+.getElementById("loading")
+.classList
+.add("hidden");
+
+
+
+document
+.getElementById("catalog")
+.classList
+.remove("hidden");
+
+
+
+let observer =
+new IntersectionObserver(
+entries=>{
+
+entries.forEach(e=>{
+
+if(e.isIntersecting){
+
+e.target.classList.add("visible");
+
+observer.unobserve(e.target);
+
 }
-if(sessionStorage.getItem("ysc"))start(); else pw.focus();
-</script></body></html>
+
+});
+
+},
+{
+threshold:.15
+}
+);
+
+
+
+document
+.querySelectorAll(".page-item")
+.forEach(
+i=>observer.observe(i)
+);
+
+
+
+},1000);
+
+
+}
+
+
+
+
+
+if(
+sessionStorage.getItem("ysc")
+){
+
+start();
+
+
+}else{
+
+
+document
+.getElementById("pw")
+.focus();
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
