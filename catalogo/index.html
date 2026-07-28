@@ -413,38 +413,37 @@ END OF FILE
 
 
 <script>
+async function unlock(){
+
+let v =
+document
+.getElementById("pw")
+.value
+.trim()
+.toUpperCase();
 
 
-const CORRECT_HASH =
-'a82000d30987549db2772d29b70139f0fe8ea3af773a4da3c80b096711af7917';
+if(v !== "YSC26"){
 
+document
+.getElementById("err")
+.textContent =
+"Archive key not recognized.";
 
-
-async function sha256(t){
-
-const b =
-new TextEncoder().encode(t);
-
-
-const h =
-await crypto.subtle.digest(
-"SHA-256",
-b
-);
-
-
-return [
-...new Uint8Array(h)
-]
-.map(
-x=>x.toString(16).padStart(2,"0")
-)
-.join("");
+return;
 
 }
 
 
+sessionStorage.setItem(
+"ysc",
+"1"
+);
 
+
+start();
+
+}
 
 async function unlock(){
 
@@ -600,7 +599,17 @@ if(sessionStorage.getItem("ysc")){
     .focus();
 
 }
+document
+.getElementById("pw")
+.addEventListener("keydown",function(e){
 
+if(e.key==="Enter"){
+
+unlock();
+
+}
+
+});
 </script>
 
 
